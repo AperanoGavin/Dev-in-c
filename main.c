@@ -39,10 +39,12 @@ int main(){
     int usrFound = 0;
     char opt;
     char opt1;
+    char nm;
     struct user *user;
     struct user usr;
     struct user usr1;
     struct user usr2;
+
 
     char c;
 
@@ -154,23 +156,29 @@ int main(){
 
 
             case '4':
-                printf("\nPlease choose your operation");
-                printf("\n1.programs solved Y ");
-                printf("\n2.programs not solved N");
-                printf("\n\nYour choice:\t");
-                scanf("%s", &opt1);
-                fgetc(stdin);
+                printf("\nPlease Enter your name");
+                scanf("%s",&nm);
 
-                switch (opt1) {
-                    case '1':
-
-
-                        break;
-                    case '2':
-
-                        break;
+                fp = fopen("Users.bin", "rb");
+                if(fread(&usr1, sizeof(struct user), 1, fp)){
+                    if (strcmp(nm, usr1.name) == 0){
+                        c = fgetc(fp);
+                        while (c != EOF) {
+                            printf("%c", c);
+                            printf("\t");
+                            c = fgetc(fp);
+                        }
+                    }
 
                 }
+
+
+
+
+                fclose(fp);
+                break;
+
+
 
 
 
