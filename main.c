@@ -54,7 +54,8 @@ int main(){
         printf("\n1.add data in file");
         printf("\n2.remove data in file");
         printf("\n4.Print  project  Y and N for students ");
-        printf("\n5.Program with most Y");
+        printf("\n5.Program with most Y and N");
+        printf("\n5.print program with most Y :");
         printf("\n\t\t\t\t%s!!!!BECAUSE IS NOT AUTOMATIC LIKE(SQL) PLEASE EXIT MENU TO SEE FILE CHANGE:!!!!",KRED);
         printf("\n7.Exit");
 
@@ -181,11 +182,8 @@ int main(){
 
 
 
-
-                break;
-
             case '5':
-                printf("print program with most Y :");
+                printf("print program with most Y and N:");
                 fp = fopen("Users.bin", "rb");
 
                 while(fread(&usr2, sizeof(struct user), 1, fp), !feof(fp)) {
@@ -229,7 +227,7 @@ int main(){
         }
 
 
-    }while (opt != '5');
+    }while (opt != '7');
 
     printf("Bye-bye ;') , you're welcome");
 
