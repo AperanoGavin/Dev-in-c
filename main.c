@@ -53,8 +53,8 @@ int main(){
         printf("\nPlease choose your operation");
         printf("\n1.add data in file");
         printf("\n2.remove data in file");
-        printf("\n4.Print  project  Y and N for students ");
-        printf("\n5.Program with most Y and N");
+        printf("\n3.Print  project  Y and N for students ");
+        printf("\n4.Program with most Y and N");
         printf("\n5.print program with most Y :");
         printf("\n\t\t\t\t%s!!!!BECAUSE IS NOT AUTOMATIC LIKE(SQL) PLEASE EXIT MENU TO SEE FILE CHANGE:!!!!",KRED);
         printf("\n7.Exit");
@@ -161,7 +161,7 @@ int main(){
                 scanf("%s",&nm);
 
                 fp = fopen("Users.bin", "rb");
-                if(fread(&usr1, sizeof(struct user), 1, fp)){
+                if(fread(&usr1, sizeof(struct user), 1, fp),!feof(fp)){
                     if (strcmp(nm, usr1.name) == 0){
                         c = fgetc(fp);
                         while (c != EOF) {
